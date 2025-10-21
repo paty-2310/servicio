@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Técnico - FullGamesDelta</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="header-top">
+        <div class="header-logo">
+            <a href="index.html" class="logo">
+                <img src="imagenes/logo.png" alt="Logo de FullGamesDelta">
+                
+            </a>
+        </div>
+
+        <div class="header-search">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos, marcas y más..." class="search-input" autocomplete="off">
+                    <button class="search-button" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="search-results-dropdown" class="search-results-dropdown"></div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <div class="nav-actions">
+                <a href="#" id="cart-icon" aria-label="Carrito de compras"><i class="fas fa-shopping-cart"></i><span id="cart-counter" class="cart-counter-class">0</span></a>
+                <a href="#" aria-label="Cuenta de usuario"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+    <nav class="header-nav">
+        <button class="nav-toggle-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-dropdown">
+            <ul class="nav-links">
+                <li>
+        <a href="index.html">
+         Inicio
+        </a>
+       </li>
+       <li>
+        <a href="all_hardware.html">
+         Hardware y Accesorios
+        </a>
+       </li>
+       <li>
+        <a href="all_games.html">
+         PC Games
+        </a>
+       </li>
+       <li>
+        <a href="all_Software.html">
+         Software
+        </a>
+       </li>
+       <li>
+        <a href="tecnhical_service.html">
+         Servicio Técnico
+        </a>
+       </li>
+                <li><a href="#">Comunidad</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+</header>
+    
+    <section class="hero-slider-section">
+    <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <a href="https://wa.me/584126569704" target="_blank"><img src="imagenes/tecnico.png" alt="Promoción 1" ></a>
+            </div>
+
+            </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
+
+<script src="products.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="cart.js"></script>
+<script src="main.js"></script>
+
+<div id="details-modal" class="details-modal-class">
+    <div class="modal-content">
+        <span id="close-details" class="close-details-class">&times;</span>
+        <div class="modal-body">
+            <img id="modal-img" src="" alt="Imagen del producto">
+            <div class="modal-info">
+                <h2 id="modal-name">Nombre del Producto</h2>
+                <p id="modal-description">Aquí va la descripción detallada del producto...</p>
+                <p id="modal-price" class="modal-price-class">$0.00</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cart-modal" class="cart-modal-class">
+    <div class="cart-content">
+        <span id="close-cart" class="close-cart-class">&times;</span>
+        <h2>Tu Carrito</h2>
+        <div id="cart-items-container">
+            </div>
+        <div class="cart-summary">
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button class="btn checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+<div id="profile-modal" class="details-modal-class"> <div class="modal-content">
+        <span id="close-profile" class="close-details-class">&times;</span>
+        <h2>Mi Perfil</h2>
+        <p class="section-subtitle">Guarda tus datos para futuras compras.</p>
+        
+        <form id="profile-form">
+            <div class="form-group">
+                <label for="profile-name">Nombre Completo</label>
+                <input type="text" id="profile-name" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="profile-address">Dirección de Envío</label>
+                <input type="text" id="profile-address" placeholder="Ingresa tu dirección">
+            </div>
+            
+            <button type="submit" class="btn">Guardar Datos</button>
+            <a href="#" id="delete-profile-data">Borrar mis datos</a>
+        </form>
+    </div>
+</div>
+
+<div class="floating-social-bar">
+    <ul>
+        <li><a href="https://wa.me/584126569704" target="_blank" aria-label="Contactar por WhatsApp" style="background-color: #25D366;">
+            <i class="fab fa-whatsapp"></i>
+        </a></li>
+
+        <li><a href="https://www.instagram.com/TU_USUARIO" target="_blank" aria-label="Visita nuestro Instagram">
+            <i class="fab fa-instagram"></i>
+        </a></li>
+
+        <li><a href="https://twitter.com/TU_USUARIO" target="_blank" aria-label="Síguenos en Twitter">
+            <i class="fab fa-twitter"></i>
+        </a></li>
+
+        <li><a href="mailto:TU_CORREO@ejemplo.com" aria-label="Enviar un correo electrónico">
+            <i class="fas fa-envelope"></i>
+        </a></li>
+
+        </ul>
+</div>
+
+<div id="promo-popup" class="promo-popup">
+    <button id="close-promo-btn" class="close-promo-btn">&times;</button>
+    
+    <a href="product-detail.html?id=001" class="promo-link">
+        <img src="imagenes/zsus.png" alt="Oferta Especial: Combo Zsus">
+        
+        <div class="promo-info">
+            <small>Oferta Especial</small>
+            <p class="promo-name">Combo Tarjeta Madre Zsus</p>
+            <p class="promo-price">$124.99</p>
+        </div>
+    </a>
+</div> 
+<div class="informacion"> 
+    <h1>Nuestros Servicios</h1> 
+    <h2>Tipos de mantenimiento</h2> 
+    <h3>Software</h3> 
+    <h6>* Optimización del S.O.: Limpieza profunda de archivos temporales, gestión de programas en segundo plano y de inicio.</h6>  
+    <div class="articulo">
+        <p><b>5 Puntos de Optimización Inmediata:</b> Los cinco puntos clave para la optimización son: 1. Identificar y mapear el proceso: Comprender y visualizar el proceso actual. 2. Analizar y repensar: Identificar áreas de mejora, ineficiencias y obstáculos. 3. Desarrollar y probar soluciones: Diseñar e implementar los procesos optimizados. 4. Implementar la automatización: Introducir la automatización para aumentar la eficiencia y la velocidad. 5. Monitorear y mejorar continuamente: Supervisar el rendimiento y realizar ajustes para una mejora constante. </p>
+    </div> 
+    <h6>* Seguridad Proactiva: Verificación y actualización de antivirus, eliminación de malware y spyware.</h6>
+    <div class="articulo"> 
+        <p><b>La importancia del escaneo semanal:</b> El escaneo semanal en software es crucial para la ciberseguridad al detectar y corregir vulnerabilidades, proteger contra ataques y malware, y garantizar el cumplimiento de políticas de seguridad. También mejora la productividad, la visibilidad y la gestión del entorno de TI, permitiendo la rápida localización de los activos y la protección continua del software en sus diferentes etapas, desde el desarrollo hasta la auditoría. </p>
+
+    </div> 
+    <h6>* Controladores (Drivers): Verificación y actualización de drivers para garantizar la máxima compatibilidad y rendimiento</h6> 
+    <div class="articulo"> 
+        <p><b>Controladores que Nunca Debes Olvidar Actualizar:</b> Los controladores que nunca debes olvidar actualizar son los de la tarjeta gráfica, la placa base (chipset), el audio y la red, ya que son cruciales para el rendimiento y la seguridad del sistema. Mantenerlos actualizados puede mejorar el rendimiento en juegos, corregir errores y solucionar vulnerabilidades de seguridad. </p>
+
+    </div> 
+    <hr>
+    <h3>Hardware</h3> 
+    <h6>* Limpieza Interna: Desmontaje y limpieza de componentes (ventiladores, disipadores, rejillas) con aire comprimido y herramientas especializadas.</h6> 
+    <!--Mostrar imágenes de una PC antes y después de la limpieza.--> 
+    <div class="image-showcase">
+    <img src="imagenes/pc_antes.jpg" alt="PC con polvo antes de la limpieza" class="cleaning-image">
+    <img src="imagenes/pc_despues.jpg" alt="PC limpia después del mantenimiento" class="cleaning-image">
+        
+    </div>
+    <h6>* Gestión de Temperatura: Reemplazo de pasta térmica en el CPU/GPU para evitar el sobrecalentamiento.</h6> 
+    <div class="articulo"> 
+        <p><b>importancia de cambiar la pasta termica:</b> Cambiar la pasta térmica es vital porque evita el sobrecalentamiento, ya que con el tiempo se degrada y pierde su capacidad para transferir el calor del procesador al disipador. Esto es crucial para mantener el rendimiento óptimo, prolongar la vida útil del equipo y prevenir daños. </p> 
+    </div> 
+    <h6>* Salud de la Batería: Diagnóstico y calibración de la batería de laptops, y consejos para alargar su vida útil.</h6>  
+    <div class="articulo"> 
+        <p><b>Mejores Prácticas para Cuidar la Batería de tu Laptop:</b> Para cuidar la batería de tu laptop, mantén la carga entre 20% y 80%, evita las descargas completas, no la expongas a calor extremo, y optimiza el rendimiento de la laptop cerrando aplicaciones innecesarias y reduciendo el brillo de la pantalla. </p>
+
+
+    </div> 
+    <hr>
+    <h3>Datos</h3> 
+    <h6>* Respaldo de Información: Servicio de configuración de copias de seguridad automáticas (en la nube o en discos externos).</h6> 
+    <div class="articulo"> 
+        <p><b>Por qué el Backup de Datos es Vital:</b> El backup de datos es vital para proteger la información ante fallos del hardware, errores humanos, ataques cibernéticos o desastres naturales, garantizando así que los datos puedan ser recuperados. Permite restaurar datos perdidos, corruptos o eliminados, asegurando la continuidad de las operaciones para individuos y empresas. </p>
+
+    </div>
+
+
+
+</div> 
+<div class="informacion"> 
+    <h1>Configuración y Optimización (Upgrades)</h> 
+    <h2>Área de Servicio</h2> 
+    <h3>Instalación de S.O.</h3> 
+    <h6>* Instalación de Hardware: Montaje y configuración de tarjetas de video, fuentes de poder o componentes personalizados.</h6> 
+    <div class="articulo"> 
+        <!--Muestra PCs que has ensamblado o mejorado.--> 
+        <p><b>Galería de Proyectos:</b></p> 
+        <div class="image-showcase">
+        <img src="" alt="PC ensamblada por nuestro tecnico "> 
+        <img src="" alt="proceso de mantenimiento de de las PCs">
+        </div>
+
+    </div> 
+    <h3>Mejoras (Upgrades)</h3> 
+    <h6>* Instalación de SSD/RAM: Asesoría sobre la compatibilidad, suministro e instalación de módulos de memoria RAM o de un disco SSD.</h6> 
+    <div class="articulo"> 
+        <p><b>¿Necesito más RAM o un SSD? Averígualo aquí:</b> La mejora más dramática para la velocidad de tu PC es pasar de un disco duro tradicional (HDD) a un **SSD**. Te asesoramos para que elijas la **frecuencia y capacidad de RAM** compatibles con tu placa base y que elijas el SSD ideal, garantizando una instalación profesional para el **máximo rendimiento**.</p>
+    </div>
+    
+    <h6>* Actualización de BIOS/UEFI: Servicio crucial para garantizar la compatibilidad con nuevos CPUs, GPUs y módulos de RAM de última generación.</h6>
+    <div class="articulo">
+        <p><b>Riesgos Cero en la BIOS:</b> La actualización de la BIOS puede ser arriesgada. Nosotros nos encargamos de este proceso delicado para desbloquear el **máximo potencial** de tu nuevo hardware sin poner en peligro tu tarjeta madre.</p> 
+
+    </div> 
+    <h3>Redes y Periféricos</h3> 
+    <h6>* Configuración de Red: Instalación de routers, configuración de redes Wi-Fi, o conexión de equipos en red.</h6> 
+    <div class="articulo"> 
+        <p><b>"Configuración de Red Doméstica/Oficina (Seguridad y Velocidad)."</b></p>
+
+    </div>
+    <div class="informacion">
+    <div class="service-block">
+        <h3>Instalación de Software Específico</h3> 
+        
+        <h6>* Software Específico: Instalación de paquetes de software (Suite Office, programas de diseño, software contable, etc.)</h6> 
+        <div class="articulo">
+            <p>
+                <b>Software Listo para Trabajar:</b> ¿Necesitas software de productividad o diseño para iniciar tus proyectos? Instalamos y configuramos paquetes como **Microsoft Office, Adobe Creative Suite o software contable**, asegurando que las licencias y las configuraciones iniciales sean correctas para que puedas empezar a trabajar de inmediato.
+            </p>
+        </div>
+        
+        <div class="service-package-box">
+            <h4>Paquete de Servicio: <!--colocar el paquete de servicio correspondiente--> </h4> 
+            <p><strong>Incluye:</strong></p>
+            <ul>
+                <li><!--colocar las especificaciones--></li>
+                <li><!--colocar las especificaciones--></li>
+                <li> <!--colocar las especificaciones--> </li> 
+                <!--colocar mas li si es necesario-->
+            </ul>
+            <p class="package-price">Precio: **$**</p>
+            <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">Solicitar Servicio</a>
+        </div>
+    </div> 
+    <div class="service-package-box"> 
+        <h4>Paquete de Servicio: <!--colocar el paquete de servicio correspondiente--> </h4> 
+        <p><strong>Incluye:</strong></p> 
+        <ul>
+
+        <li><!--colocar las especificaciones--></li>
+                <li><!--colocar las especificaciones--></li>
+                <li> <!--colocar las especificaciones--> </li> 
+                <!--colocar mas li si es necesario-->
+            </ul>
+            <p class="package-price">Precio: **$**</p>
+            <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">Solicitar Servicio</a>
+
+    </div> 
+    <div class="service-package-box"> 
+        <h4>Paquete de Servicio: <!--colocar el paquete de servicio correspondiente--> </h4> 
+        <p><strong>Incluye:</strong></p> 
+        <ul>
+
+        <li><!--colocar las especificaciones--></li>
+                <li><!--colocar las especificaciones--></li>
+                <li> <!--colocar las especificaciones--> </li> 
+                <!--colocar mas li si es necesario-->
+            </ul>
+            <p class="package-price">Precio: **$**</p>
+            <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">Solicitar Servicio</a>
+    
+</div> 
+<div class="service-block">
+    
+    <hr class="service-separator">
+
+    <h2>Tipo de Reparación</h2> 
+    
+    <h3>Diagnóstico</h3> 
+    
+    <h6>* Evaluación Inicial: Proceso claro para determinar la causa del fallo (monto, tiempo estimado y pasos a seguir)</h6> 
+    
+    <div class="articulo">
+        <p>
+            <b>Nuestro Proceso de 4 Pasos para Diagnosticar tu Falla:</b>
+        </p>
+        <ol class="diagnosis-steps">
+            <li>**Recepción y Registro:** Tomamos nota de los síntomas reportados por el cliente.</li>
+            <li>**Pruebas Iniciales:** Se ejecutan **pruebas de estabilidad** y diagnóstico de software/hardware estándar (temperaturas, salud de disco, errores de S.O.).</li>
+            <li>**Prueba Profunda:** Si el problema persiste, se realiza un **desmontaje y prueba de componentes** (RAM, PSU, GPU) en banco de pruebas.</li>
+            <li>**Informe y Presupuesto:** Te entregamos un informe detallado con la causa raíz, el **costo fijo de la reparación** y el tiempo estimado para completarla. ¡Sin sorpresas!</li>
+        </ol>
+        <p>
+            **Costo del Diagnóstico:** El costo de esta evaluación es de **<!--coloque el precio-->** (este monto se descuenta si decides proceder con la reparación).
+        </p> 
+        <br>
+        <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">Solicitar Servicio</a>
+
+    </div>
+    
+    </div> 
+    <br>
+    
+
+    
+<div class="service-block"> 
+    <h2>Hardware</h2>  
+    
+    <h3>Reemplazo de Componentes</h3>
+    
+    <h6>* Reemplazo de Placas y Fuentes: Reparación o cambio de placas base (motherboards), fuentes de poder o tarjetas gráficas.</h6>  
+    <div class="articulo">
+        <p>
+            <b>Reparación de Componentes Críticos:</b> Si un diagnóstico confirma una falla de hardware, te ofrecemos la opción de reparación a nivel de componente (donde sea viable, como soldadura o cambio de capacitores) o el **reemplazo directo**. Solo usamos componentes de alta calidad y garantizamos la compatibilidad total con tu equipo.
+        </p>
+    </div>
+    
+    <h6>* Reparación de Laptops: Sustitución profesional de pantallas rotas, teclados, bisagras y baterías.</h6> 
+    <div class="articulo">
+        <p>
+            <b>Tu Laptop como Nueva:</b> Nos especializamos en la reparación estética y funcional de laptops. Desde el cambio de una **pantalla LED/OLED** hasta la sustitución de un **teclado averiado**, garantizamos acabados limpios y utilizamos piezas de repuesto originales o de la más alta calidad disponible.
+        </p> 
+    </div> 
+    
+    <hr class="service-separator"> 
+    
+    <h3>Reparación a Nivel Componente</h3> 
+    
+    <h6>* Microsoldadura y Reparación de Placas: Servicios avanzados como microsoldadura, reballing de chips gráficos o reparación de conectores dañados (USB-C, HDMI, de carga).</h6>
+    <div class="articulo">
+        <p>
+            <b>Salvando tu Equipo:</b> Cuando el reemplazo de una placa completa es demasiado costoso, nuestra especialidad en **microsoldadura** nos permite reparar fallos en la placa base de laptops y tarjetas gráficas. Esto incluye la **reparación de cortos**, fallos de energía y la sustitución de chips BGA o SMD. ¡La opción más económica y sostenible para fallos severos!
+        </p>
+    </div> 
+    
+    <hr class="service-separator"> 
+    
+    <h3>Remoción de Virus y Malware</h3>
+
+    <h6>* Eliminación Total de Amenazas: Eliminación profunda de virus, ransomware, spyware y cualquier amenaza, junto con la restauración de archivos dañados.</h6>
+    <div class="articulo">
+        <p>
+            <b>Resultado 100% Limpio:</b> No solo eliminamos el malware visible; realizamos una **limpieza total del registro** y del sistema de archivos para asegurar que no queden rastros de las amenazas. Este servicio incluye la restauración de archivos corruptos para que tu sistema vuelva a operar con **máxima seguridad y velocidad**.
+        </p>
+    </div>
+
+    <div class="service-package-box">
+        <h4>Servicio Express: Eliminación de Virus y Restauración del Sistema</h4> 
+        <p><strong>Lo que obtienes:</strong></p>
+        <ul>
+            <li>Escaneo profundo y desinfección total del sistema.</li>
+            <li>Parche de vulnerabilidades críticas.</li>
+            <li>Instalación de antivirus gratuito de alta calidad.</li>
+            <li>Tiempo de entrega estimado: **Máximo 4 Horas**.</li>
+        </ul>
+        <p class="package-price">Tarifa Fija: **<!--coloque el precio-->**</p>
+        <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">¡Mi PC tiene un Virus!</a>
+    </div>  
+    <hr class="service-separator"> 
+    
+<h3>Recuperación de Datos</h3> 
+
+<h6>* Recuperación de Datos: Intentos de recuperar archivos de discos duros (HDD, SSD), memorias USB o tarjetas SD con fallos lógicos o físicos.</h6> 
+<div class="articulo">
+    <p>
+        <b>Tu Información es Prioridad:</b> Ofrecemos servicios de **recuperación de datos** ante eliminaciones accidentales, formateos o fallos del sistema de archivos (fallos lógicos). Para fallos físicos (discos que no encienden o hacen ruidos), gestionamos el proceso inicial y evaluamos la viabilidad del rescate. **¡No cobramos si no recuperamos los datos!**
+    </p>
+</div>
+
+<div class="service-package-box">
+    <h4>Pregunta Frecuente (FAQ)</h4> 
+    <p><strong>¿Se pueden recuperar archivos de un disco que no enciende?</strong></p>
+    <p>
+        Sí, a menudo es posible. Si el disco no enciende debido a un fallo en la **placa lógica (PCB)**, podemos repararla o reemplazarla para acceder a los platos. Si el fallo es grave (cabeza lectora o motor), se requiere un servicio especializado en **laboratorio (Clase 100)**. Te ofrecemos una evaluación inicial gratuita.
+    </p>
+</div>
+    
+</div> 
+<hr class="service-separator"> 
+
+<div class="service-block">
+    <h2>Soporte Express</h2> 
+
+    <h6>* Asistencia Remota: Solución de problemas menores de software (configuración, errores, optimización) de forma inmediata, sin necesidad de visita física.</h6> 
+    <div class="articulo">
+        <p>
+            <b>Soluciones al Instante:</b> Con nuestro servicio de Asistencia Remota, podemos acceder de forma segura a tu equipo (con tu permiso) para resolver problemas comunes de software, configurar impresoras, o realizar optimizaciones **sin que tengas que moverte de casa**. Es ideal para fallos rápidos y urgentes.
+        </p>
+    </div>
+
+    <div class="remote-support-banner">
+        <h4>Soporte Remoto: Resuelve tu Problema en Minutos.</h4> 
+        <p>Tarifa plana por sesión de 30 minutos.</p>
+        <p class="package-price">Desde **$<!--coloque el precio-->** </p>
+        <a href="https://wa.me/584126569704" target="_blank" class="btn btn-primary">Solicitar Acceso Remoto</a>
+    </div>
+
+</div>
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column footer-contact">
+            <a href="index.html" class="footer-logo">
+                <img src="imagenes/logo.png" alt="Logo de FullGamesDelta - Tienda de Tecnología">
+            </a>
+            <p class="footer-text">Soluciones de Gaming y Tecnología de Punta.</p>
+            <p class="contact-info"><i class="fas fa-map-marker-alt"></i> Av. Principal, Maracaibo, Zulia.</p>
+            <p class="contact-info"><i class="fas fa-envelope"></i> soporte@fullgamesdelta.com</p>
+            <p class="contact-info"><i class="fas fa-phone"></i> +58 412 656 9704</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>Enlaces Rápidos</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="all_hardware.html">Hardware</a></li>
+                <li><a href="all_games.html">PC Games</a></li>
+                <li><a href="tecnhical_service.html">Servicio Técnico</a></li>
+                <li><a href="#">Ofertas</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>Ayuda y Legal</h4>
+            <ul class="footer-links">
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Mi Cuenta</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+                <a href="https://wa.me/584126569704" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/TU_USUARIO" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/TU_USUARIO" target="_blank" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:TU_CORREO@ejemplo.com" aria-label="Correo Electrónico"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <h4>Suscríbete</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Ingresa tu correo" required>
+                <button type="submit" class="btn-subscribe">Suscribir</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 FullGamesDelta. Todos los derechos reservados.</p>
+        <div class="payment-methods">
+            <i class="fab fa-cc-visa" aria-label="Visa"></i>
+            <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
+            <i class="fab fa-cc-amex" aria-label="Amex"></i>
+            <i class="fab fa-paypal" aria-label="PayPal"></i>
+        </div>
+    </div>
+</footer>
+
+</body>
